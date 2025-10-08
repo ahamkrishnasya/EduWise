@@ -1,0 +1,30 @@
+﻿@model IEnumerable<EduWise.Models.Question>
+@{
+    ViewData["Title"] = "Quiz List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Available Questions</h2>
+<a href="/Quiz/Generate" class="btn btn-success mb-3">Generate New Quiz</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Question</th>
+            <th>Answer</th>
+            <th>Source Page</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var q in Model)
+        {
+            <tr>
+                <td>@q.OptionsJson</td>
+                <td>@q.Text</td>
+                <td>@q.CorrectAnswer</td>
+                <td>@q.PdfFileId</td>
+            </tr>
+        }
+    </tbody>
+</table>

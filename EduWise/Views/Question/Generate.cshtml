@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Generate Quiz";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Generate Quiz</h2>
+
+<form asp-action="Generate" method="post">
+    <div class="mb-3">
+        <label class="form-label">Enter PDF ID:</label>
+        <input type="number" name="pdfId" class="form-control" placeholder="Enter PDF Id" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Generate Quiz</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success mt-3">@ViewBag.Message</div>
+}
