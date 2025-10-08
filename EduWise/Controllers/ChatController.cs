@@ -1,22 +1,36 @@
 using Microsoft.AspNetCore.Mvc;
+using EduWise.Services;
+using System.Threading.Tasks;
+using System.Text.Json;
+using System.Linq;
 
 namespace EduWise.Controllers
 {
     public class ChatController : Controller
     {
-        public IActionResult Index()
+        private readonly GeminiService _gemini;
+
+        public ChatController(GeminiService gemini)
         {
-            return View();
+            _gemini = gemini;
         }
 
         [HttpPost]
-        public IActionResult Ask(string userMessage)
+        public async Task<IActionResult> Send(string message)
         {
-            // Mock response (you can replace with AI later)
-            string response = userMessage.Contains("Newton") ? "Newton's laws explain motion and force." : "I'll get back to you with more details!";
-            ViewBag.Response = response;
-            ViewBag.UserMessage = userMessage;
-            return View("Index");
+            if (string.IsNullOrWhiteSpace(message))
+                return Json(new { reply = "Please type something!" });
+
+            try
+            {
+                var reply = await _gemini.GetResponseAsync(message); // already parsed text
+                return Json(new { reply });
+            }
+            catch (System.Exception ex)
+            {
+                return Json(new { reply = $"AI Error: {ex.Message}" });
+            }
         }
+
     }
 }

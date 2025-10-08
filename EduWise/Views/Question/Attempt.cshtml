@@ -1,0 +1,38 @@
+﻿@model List<EduWise.Models.Question>
+@{
+    ViewData["Title"] = "Attempt Quiz";
+}
+
+<h2>Quiz</h2>
+
+<form method="post" asp-action="Submit">
+    <input type="hidden" name="pdfId" value="@Model.FirstOrDefault()?.PdfId" />
+
+    @foreach (var q in Model)
+    {
+        <div class="mb-4 p-3 border rounded">
+            <p><strong>Q@q.Id:</strong> @q.Text</p>
+
+            @if (q.QuestionType == "MCQ" && !string.IsNullOrWhiteSpace(q.OptionsJson))
+            {
+                var options = System.Text.Json.JsonSerializer.Deserialize<List<string>>(q.OptionsJson);
+                foreach (var opt in options)
+                {
+                    <div>
+                        <input type="radio" name="@q.Id" value="@opt" /> @opt
+                    </div>
+                }
+            }
+            else if (q.QuestionType == "SAQ")
+            {
+                <input type="text" name="@q.Id" class="form-control" />
+            }
+            else if (q.QuestionType == "LAQ")
+            {
+                <textarea name="@q.Id" class="form-control" rows="4"></textarea>
+            }
+        </div>
+    }
+
+    <button type="submit" class="btn btn-success">Submit Quiz</button>
+</form>

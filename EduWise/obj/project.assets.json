@@ -47,6 +47,23 @@
           }
         }
       },
+      "Google_GenerativeAI/3.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "9.0.3",
+          "System.Text.Json": "9.0.3"
+        },
+        "compile": {
+          "lib/net8.0/GenerativeAI.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/GenerativeAI.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -1641,6 +1658,31 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "Google_GenerativeAI/3.3.0": {
+      "sha512": "EqwPmWabJCk2HjYFTk70idoYWip83MGmTYHaIYeX+76bC5/CBH7fop7P6gpI6ko0kMJW8hI6zxJYKDiUdVzcKA==",
+      "type": "package",
+      "path": "google_generativeai/3.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "favicon.png",
+        "google_generativeai.3.3.0.nupkg.sha512",
+        "google_generativeai.nuspec",
+        "lib/net462/GenerativeAI.dll",
+        "lib/net462/GenerativeAI.xml",
+        "lib/net6.0/GenerativeAI.dll",
+        "lib/net6.0/GenerativeAI.xml",
+        "lib/net7.0/GenerativeAI.dll",
+        "lib/net7.0/GenerativeAI.xml",
+        "lib/net8.0/GenerativeAI.dll",
+        "lib/net8.0/GenerativeAI.xml",
+        "lib/net9.0/GenerativeAI.dll",
+        "lib/net9.0/GenerativeAI.xml",
+        "lib/netstandard2.0/GenerativeAI.dll",
+        "lib/netstandard2.0/GenerativeAI.xml"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -4716,6 +4758,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Google_GenerativeAI >= 3.3.0",
       "Microsoft.EntityFrameworkCore >= 9.0.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.9",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.9"
@@ -4772,6 +4815,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Google_GenerativeAI": {
+            "target": "Package",
+            "version": "[3.3.0, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[9.0.9, )"

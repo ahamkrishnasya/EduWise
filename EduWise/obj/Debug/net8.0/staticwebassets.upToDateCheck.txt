@@ -58,3 +58,5 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\uploads\592cc81b-8a90-4f45-85aa-cb0b24158e8b_ResumeKrishna.pdf
+wwwroot\uploads\dedb69ec-0b64-4cc1-8e65-c289c88460bd_MainPage.pdf

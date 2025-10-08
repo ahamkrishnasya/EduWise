@@ -1,0 +1,12 @@
+﻿@model EduWise.Models.PdfFile
+@{
+    ViewData["Title"] = "View PDF";
+};
+
+<h2>@ViewData["Title"]</h2>
+
+<div style="height:80vh;">
+    <iframe src="@Url.Content(Model.FilePath)" width="100%" height="100%" style="border:none;"></iframe>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary mt-3">Back</a>

@@ -1,19 +1,25 @@
-﻿@{
+﻿@model List<EduWise.Models.PdfFile>
+@{
     ViewData["Title"] = "Generate Quiz";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Generate Quiz</h2>
-
-<form asp-action="Generate" method="post">
-    <div class="mb-3">
-        <label class="form-label">Enter PDF ID:</label>
-        <input type="number" name="pdfId" class="form-control" placeholder="Enter PDF Id" required />
-    </div>
-    <button type="submit" class="btn btn-primary">Generate Quiz</button>
-</form>
+<h2>Generate Quiz from PDF</h2>
 
 @if (ViewBag.Message != null)
 {
-    <div class="alert alert-success mt-3">@ViewBag.Message</div>
+    <div class="alert alert-success">@ViewBag.Message</div>
 }
+
+<form method="post" asp-action="Generate">
+    <div class="form-group">
+        <label>Select PDF:</label>
+        <select name="pdfId" class="form-control" required>
+            <option value="">-- Select PDF --</option>
+            @foreach (var pdf in Model)
+            {
+                <option value="@pdf.Id">@pdf.FileName</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Generate Quiz</button>
+</form>

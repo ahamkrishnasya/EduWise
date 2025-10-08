@@ -1,8 +1,44 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<EduWise.Models.PdfFile>
+@{
+    ViewData["Title"] = "";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>PDF Source Selector</h2>
+
+<form asp-action="Upload" asp-controller="Source" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".pdf" required />
+    <button type="submit" class="btn btn-primary">Upload PDF</button>
+</form>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+<hr />
+<h4>Available PDFs</h4>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>File Name</th>
+            <th>Uploaded At</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pdf in Model)
+        {
+            <tr>
+                <td>@pdf.FileName</td>
+                <td>@pdf.UploadedAt.ToString("dd-MM-yyyy HH:mm")</td>
+                <td>
+                    <a asp-action="ViewPdf" asp-route-id="@pdf.Id" class="btn btn-sm btn-success">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

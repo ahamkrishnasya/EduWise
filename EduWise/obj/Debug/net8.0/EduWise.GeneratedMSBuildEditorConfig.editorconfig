@@ -36,12 +36,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGRmXFVwbG9hZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Krishna Gupta/source/repos/EduWise/EduWise/Views/Question/Attempt.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cQXR0ZW1wdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Krishna Gupta/source/repos/EduWise/EduWise/Views/Question/Generate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cR2VuZXJhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Krishna Gupta/source/repos/EduWise/EduWise/Views/Question/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Krishna Gupta/source/repos/EduWise/EduWise/Views/Question/Result.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cUmVzdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Krishna Gupta/source/repos/EduWise/EduWise/Views/Shared/Error.cshtml]
@@ -52,8 +60,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Krishna Gupta/source/repos/EduWise/EduWise/Views/Source/ChatView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU291cmNlXENoYXRWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Krishna Gupta/source/repos/EduWise/EduWise/Views/Source/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU291cmNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Krishna Gupta/source/repos/EduWise/EduWise/Views/Source/ViewPdf.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU291cmNlXFZpZXdQZGYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Krishna Gupta/source/repos/EduWise/EduWise/Views/_ViewImports.cshtml]

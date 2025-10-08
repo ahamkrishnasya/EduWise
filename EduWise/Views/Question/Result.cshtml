@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Quiz Result";
+}
+
+<h2>Quiz Result</h2>
+
+<p><strong>Score:</strong> @ViewBag.Score / @ViewBag.Total</p>
+
+<h3>Explanations:</h3>
+@if (ViewBag.Explanations != null)
+{
+    foreach (var item in (Dictionary<int, string>)ViewBag.Explanations)
+    {
+        <div class="mb-3 p-2 border rounded">
+            <p><strong>Q@item.Key:</strong></p>
+            <p>@item.Value</p>
+        </div>
+    }
+}
